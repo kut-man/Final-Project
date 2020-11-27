@@ -16,13 +16,11 @@ def register_user():
 
     screen1 = Toplevel(root)
     screen1.title("Register")
-    screen1.geometry("265x190+866+100")
+    screen1.geometry("265x172+866+100")
     screen1.resizable(False, False)
     screen1.iconbitmap("b.ico")
     username = StringVar()
     password = StringVar()
-    username_info = username.get()
-    password_info = password.get()
     Label(screen1, text="Enter details below").pack()
     Label(screen1, text="").pack()
     Label(screen1, text="Username * ").pack()
@@ -37,19 +35,22 @@ def register_user():
 def register_file():
     username_info = username.get()
     password_info = password.get()
-
-    file = open(username_info, "w")
-    file.write(username_info + "\n")
-    file.write(password_info)
-    file.close()
-    username_entry.delete(0, END)
-    password_entry.delete(0, END)
-    Label(screen1, text="Registration Success", fg="green", font=("verdana", 11)).pack()
-    screen1.after(1000, lambda: screen1.destroy())
-
-
-def destroy_widget(widget):
-    widget.destroy()
+    try:
+        file = open(username_info, "w")
+        file.write(username_info + "\n")
+        file.write(password_info)
+        file.close()
+    except FileNotFoundError:
+        pass
+    if username_info == "":
+        empty = Label(screen1, text="Empty blanc", fg="green", font=("verdana", 11))
+        empty.pack()
+        screen1.after(1000, empty.destroy)
+    else:
+        username_entry.delete(0, END)
+        password_entry.delete(0, END)
+        Label(screen1, text="Registration Success", fg="green", font=("verdana", 11)).pack()
+        screen1.after(1000, lambda: screen1.destroy())
 
 
 def login_verify():
