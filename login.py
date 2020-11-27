@@ -42,7 +42,7 @@ def register_file():
         file.close()
     except FileNotFoundError:
         pass
-    if username_info == "":
+    if username_info == "" or password_info == "":
         empty = Label(screen1, text="Empty blanc", fg="green", font=("verdana", 11))
         empty.pack()
         screen1.after(1000, empty.destroy)
@@ -64,10 +64,19 @@ def login_verify():
         verify = file1.read().splitlines()
         if password1 in verify:
             login_success()
+
         else:
             myLabel = Label(root, text="Login or Password is incorrect", fg="green", font=("verdana", 11)).pack()
             myLabel.pack()
             root.after(1000, myLabel.destroy)
+    elif username1 == "":
+        mylbl = Label(root, text="Student number is empty", fg="green", font=("verdana", 11))
+        mylbl.pack()
+        root.after(1000, mylbl.destroy)
+    elif password1 == "":
+        mylbl1 = Label(root, text="Password is empty", fg="green", font=("verdana", 11))
+        mylbl1.pack()
+        root.after(1000, mylbl1.destroy)
     else:
         myLabel1 = Label(root, text="Login or Password is incorrect", fg="green", font=("verdana", 11))
         myLabel1.pack()
@@ -95,7 +104,7 @@ username_lbl.pack()
 login_entry.pack()
 password_lbl.pack()
 password_entry.pack()
-login_btn.pack(ipadx=39)
+login_btn.pack(ipadx=42)
 register_btn.pack(ipadx=36)
 
 AlaToo_lbl.pack(side=BOTTOM)
