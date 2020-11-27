@@ -16,7 +16,7 @@ def register_user():
 
     screen1 = Toplevel(root)
     screen1.title("Register")
-    screen1.geometry("265x190+100+110")
+    screen1.geometry("265x190+866+100")
     screen1.resizable(False, False)
     username = StringVar()
     password = StringVar()
@@ -71,9 +71,11 @@ def login_verify():
         myLabel1.pack()
         root.after(1000, myLabel1.destroy)
 
+
 root = Tk()
 root.resizable(False, False)
 root.title("LOGIN SCREEN")
+root.geometry("265x439+600+100")
 root.configure(bg="white")
 photo2 = PhotoImage(file="b.png")
 photo = Label(root, image=photo2, bg="#999966")
