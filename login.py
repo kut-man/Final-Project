@@ -29,7 +29,8 @@ def register_user():
     Label(screen1, text="Password * ").pack()
     password_entry = Entry(screen1, textvariable=password)
     password_entry.pack()
-    Button(screen1, text="Register", width=10, height=1, command=register_file).pack()
+    Button(screen1, text="Register", width=10, height=1,
+           command=register_file).pack()
 
 
 def register_file():
@@ -43,13 +44,15 @@ def register_file():
     except FileNotFoundError:
         pass
     if username_info == "" or password_info == "":
-        empty = Label(screen1, text="Empty blanc", fg="green", font=("verdana", 11))
+        empty = Label(screen1, text="Empty blanc", fg="green",
+                      font=("verdana", 11))
         empty.pack()
         screen1.after(1000, empty.destroy)
     else:
         username_entry.delete(0, END)
         password_entry.delete(0, END)
-        Label(screen1, text="Registration Success", fg="green", font=("verdana", 11)).pack()
+        Label(screen1, text="Registration Success", fg="green",
+              font=("verdana", 11)).pack()
         screen1.after(1000, lambda: screen1.destroy())
 
 
@@ -66,19 +69,23 @@ def login_verify():
             login_success()
 
         else:
-            myLabel = Label(root, text="Login or Password is incorrect", fg="green", font=("verdana", 11)).pack()
+            myLabel = Label(root, text="Login or Password is incorrect",
+                            fg="green", font=("verdana", 11)).pack()
             myLabel.pack()
             root.after(1000, myLabel.destroy)
     elif username1 == "":
-        mylbl = Label(root, text="Student number is empty", fg="green", font=("verdana", 11))
+        mylbl = Label(root, text="Student number is empty", fg="green",
+                      font=("verdana", 11))
         mylbl.pack()
         root.after(1000, mylbl.destroy)
     elif password1 == "":
-        mylbl1 = Label(root, text="Password is empty", fg="green", font=("verdana", 11))
+        mylbl1 = Label(root, text="Password is empty", fg="green",
+                       font=("verdana", 11))
         mylbl1.pack()
         root.after(1000, mylbl1.destroy)
     else:
-        myLabel1 = Label(root, text="Login or Password is incorrect", fg="green", font=("verdana", 11))
+        myLabel1 = Label(root, text="Login or Password is incorrect",
+                         fg="green", font=("verdana", 11))
         myLabel1.pack()
         root.after(1000, myLabel1.destroy)
 
@@ -97,7 +104,8 @@ password_lbl = Label(root, text="Password:", font=("Helvetica", 10))
 password_entry = Entry(root, show="*")
 login_btn = Button(root, text="Login", command=login_verify)
 register_btn = Button(root, text="Register", command=register_user)
-AlaToo_lbl = Label(root, text="Ala-Too International University 2020", font=("Arial", 9))
+AlaToo_lbl = Label(root, text="Ala-Too International University 2020",
+                   font=("Arial", 9))
 
 photo.pack()
 username_lbl.pack()
