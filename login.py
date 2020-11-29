@@ -48,6 +48,16 @@ def register_file():
                       font=("verdana", 11))
         empty.pack()
         screen1.after(1000, empty.destroy)
+    elif len(username_info) > 13:
+        len_error = Label(screen1, text="Too long username", fg="green",
+                      font=("verdana", 11))
+        len_error.pack()
+        screen1.after(1000, len_error.destroy)
+    elif len(password_info) > 13:
+        len_error1 = Label(screen1, text="Too long password", fg="green",
+                          font=("verdana", 11))
+        len_error1.pack()
+        screen1.after(1000, len_error1.destroy)
     else:
         username_entry.delete(0, END)
         password_entry.delete(0, END)
@@ -70,51 +80,53 @@ def login_verify():
 
         else:
             myLabel = Label(root, text="Login or Password is incorrect",
-                            fg="green", font=("verdana", 11)).pack()
-            myLabel.pack()
+                            fg="green", font=("verdana", 11)).grid()
+            myLabel.grid()
             root.after(1000, myLabel.destroy)
     elif username1 == "":
         mylbl = Label(root, text="Student number is empty", fg="green",
                       font=("verdana", 11))
-        mylbl.pack()
+        mylbl.grid()
         root.after(1000, mylbl.destroy)
     elif password1 == "":
         mylbl1 = Label(root, text="Password is empty", fg="green",
                        font=("verdana", 11))
-        mylbl1.pack()
+        mylbl1.grid()
         root.after(1000, mylbl1.destroy)
     else:
         myLabel1 = Label(root, text="Login or Password is incorrect",
                          fg="green", font=("verdana", 11))
-        myLabel1.pack()
+        myLabel1.grid()
         root.after(1000, myLabel1.destroy)
 
 
 root = Tk()
 root.resizable(False, False)
 root.title("LOGIN SCREEN")
-root.geometry("265x439+600+100")
+root.geometry("265x460+600+100")
 root.iconbitmap("b.ico")
 root.configure(bg="white")
 photo2 = PhotoImage(file="b.png")
 photo = Label(root, image=photo2, bg="#999966")
-username_lbl = Label(root, text="Student number:", font=("Helvetica", 10))
-login_entry = Entry(root)
-password_lbl = Label(root, text="Password:", font=("Helvetica", 10))
-password_entry = Entry(root, show="*")
-login_btn = Button(root, text="Login", command=login_verify)
-register_btn = Button(root, text="Register", command=register_user)
+username_lbl = Label(root, text="Student number", font=("Helvetica", 10))
+login_entry = Entry(root, borderwidth=6)
+password_lbl = Label(root, text="Password", font=("Helvetica", 10))
+password_entry = Entry(root, show="*", borderwidth=6)
+login_btn = Button(root, text="Login", command=login_verify, padx=46)
+register_btn = Button(root, text="Register", command=register_user, padx=40)
+show = Button(root, text="👀", command=register_user, padx=1, pady=1)
 AlaToo_lbl = Label(root, text="Ala-Too International University 2020",
                    font=("Arial", 9))
 
-photo.pack()
-username_lbl.pack()
-login_entry.pack()
-password_lbl.pack()
-password_entry.pack()
-login_btn.pack(ipadx=42)
-register_btn.pack(ipadx=36)
+photo.grid()
+username_lbl.grid()
+login_entry.grid()
+password_lbl.grid()
+password_entry.grid()
+login_btn.grid()
+show.place(x=195, y=332)
+register_btn.grid()
 
-AlaToo_lbl.pack(side=BOTTOM)
+AlaToo_lbl.grid(row=7, column=0)
 
 root.mainloop()
