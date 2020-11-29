@@ -50,12 +50,12 @@ def register_file():
         screen1.after(1000, empty.destroy)
     elif len(username_info) > 13:
         len_error = Label(screen1, text="Too long username", fg="green",
-                      font=("verdana", 11))
+                          font=("verdana", 11))
         len_error.pack()
         screen1.after(1000, len_error.destroy)
     elif len(password_info) > 13:
         len_error1 = Label(screen1, text="Too long password", fg="green",
-                          font=("verdana", 11))
+                           font=("verdana", 11))
         len_error1.pack()
         screen1.after(1000, len_error1.destroy)
     else:
@@ -67,11 +67,10 @@ def register_file():
 
 
 def login_verify():
-
     username1 = login_entry.get()
     password1 = password_entry.get()
-
     list_of_files = os.listdir()
+
     if username1 in list_of_files:
         file1 = open(username1, "r")
         verify = file1.read().splitlines()
@@ -80,53 +79,55 @@ def login_verify():
 
         else:
             myLabel = Label(root, text="Login or Password is incorrect",
-                            fg="green", font=("verdana", 11)).grid()
-            myLabel.grid()
+                            fg="green", font=("verdana", 11))
+            myLabel.place(x=19, y=455)
             root.after(1000, myLabel.destroy)
     elif username1 == "":
         mylbl = Label(root, text="Student number is empty", fg="green",
                       font=("verdana", 11))
-        mylbl.grid()
+        mylbl.place(x=35, y=455)
         root.after(1000, mylbl.destroy)
     elif password1 == "":
         mylbl1 = Label(root, text="Password is empty", fg="green",
                        font=("verdana", 11))
-        mylbl1.grid()
+        mylbl1.place(x=60, y=455)
         root.after(1000, mylbl1.destroy)
     else:
         myLabel1 = Label(root, text="Login or Password is incorrect",
                          fg="green", font=("verdana", 11))
-        myLabel1.grid()
+        myLabel1.place(x=19, y=455)
         root.after(1000, myLabel1.destroy)
 
 
 root = Tk()
 root.resizable(False, False)
 root.title("LOGIN SCREEN")
-root.geometry("265x460+600+100")
+root.geometry("265x480+600+100")
 root.iconbitmap("b.ico")
 root.configure(bg="white")
 photo2 = PhotoImage(file="b.png")
 photo = Label(root, image=photo2, bg="#999966")
-username_lbl = Label(root, text="Student number", font=("Helvetica", 10))
+sign_in_lbl = Label(root, text="Sign In", font=("Helvetica", 20))
 login_entry = Entry(root, borderwidth=6)
-password_lbl = Label(root, text="Password", font=("Helvetica", 10))
-password_entry = Entry(root, show="*", borderwidth=6)
+
+password_entry = Entry(root, borderwidth=6)
 login_btn = Button(root, text="Login", command=login_verify, padx=46)
 register_btn = Button(root, text="Register", command=register_user, padx=40)
-show = Button(root, text="👀", command=register_user, padx=1, pady=1)
+show_btn = Button(root, text="👁", command=register_user)
 AlaToo_lbl = Label(root, text="Ala-Too International University 2020",
                    font=("Arial", 9))
 
 photo.grid()
-username_lbl.grid()
+sign_in_lbl.grid()
 login_entry.grid()
-password_lbl.grid()
+login_entry.insert(0, "Student Number")
+login_entry.bind("<FocusIn>", lambda args: login_entry.delete('0', 'end'))
 password_entry.grid()
+password_entry.insert(0, "Password")
+password_entry.bind("<FocusIn>", lambda args: password_entry.delete('0', 'end'))
 login_btn.grid()
-show.place(x=195, y=332)
-register_btn.grid()
-
-AlaToo_lbl.grid(row=7, column=0)
+show_btn.place(x=195, y=327)
+register_btn.place(x=67, y=385)
+AlaToo_lbl.place(x=30, y=420)
 
 root.mainloop()
