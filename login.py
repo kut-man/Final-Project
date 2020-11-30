@@ -1,4 +1,5 @@
 from tkinter import *
+from random import choice
 import os
 
 
@@ -16,7 +17,7 @@ def register_user():
 
     register_win = Toplevel(root)
     register_win.title("Register")
-    register_win.geometry("265x172+866+100")
+    register_win.geometry("265x200+866+100")
     register_win.resizable(False, False)
     register_win.iconbitmap("b.ico")
     Label(register_win, text="Enter details below").pack()
@@ -27,8 +28,8 @@ def register_user():
     Label(register_win, text="Password * ").pack()
     password_entry = Entry(register_win)
     password_entry.pack()
-    Button(register_win, text="Register", width=10, height=1,
-           command=register_file).pack()
+    Button(register_win, text="Register", command=register_file).pack()
+    Button(register_win, text="Generate Password", command=generate).pack()
 
 
 def register_file():
@@ -101,6 +102,31 @@ def login_verify():
         root.after(1000, error_label4.destroy)
 
 
+def toggle_password():
+    if password_entry_main.cget('show') == '':
+        password_entry_main.config(show='*')
+        show_btn.config(image=eye_photo2)
+    else:
+        password_entry_main.config(show='')
+        show_btn.config(image=eye_photo)
+
+
+def low():
+    password_entry.delete(0, END)
+
+    upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    paswrd = ""
+
+    for i in range(0, 10):
+        paswrd = paswrd + choice(upper)
+    return paswrd
+
+
+def generate():
+    password1 = low()
+    password_entry.insert(0, password1)
+
+
 root = Tk()
 root.resizable(False, False)
 root.title("LOGIN SCREEN")
@@ -110,6 +136,8 @@ root.configure(bg="white")
 
 photo2 = PhotoImage(file="b.png")
 photo = Label(root, image=photo2, bg="#999966")
+eye_photo = PhotoImage(file=r"D:\Final-Project\p.png")
+eye_photo2 = PhotoImage(file=r"D:\Final-Project\rsz_3o.png")
 
 sign_in_lbl = Label(root, text="Sign In", font=("Helvetica", 20))
 
@@ -118,7 +146,7 @@ login_entry_main = Entry(root, borderwidth=6)
 
 login_btn = Button(root, text="Login", command=login_verify, padx=46)
 register_btn = Button(root, text="Register", command=register_user, padx=40)
-show_btn = Button(root, text="👁", command=register_user)
+show_btn = Button(root, text="👁", image=eye_photo, command=toggle_password)
 
 AlaToo_lbl = Label(root, text="Ala-Too International University 2020",
                    font=("Arial", 9))
