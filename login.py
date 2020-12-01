@@ -80,18 +80,18 @@ def login_verify():
 
         else:
             error_label1 = Label(root, text="Login or Password is incorrect."
-                                            "\n Try again!",
-                                 fg="red", font=("permanent marker", 10))
+                                            "\n Try again!", bg="#3285a8",
+                                 fg="white", font=("permanent marker", 10))
             error_label1.place(x=30, y=475)
             root.after(1000, error_label1.destroy)
     elif username1 == "":
-        error_label2 = Label(root, text="Student number is empty", fg="red",
-                             font=("permanent marker", 12))
+        error_label2 = Label(root, text="Student number is empty", fg="white",
+                             bg="#3285a8", font=("permanent marker", 12))
         error_label2.place(x=35, y=475)
         root.after(1000, error_label2.destroy)
     elif password1 == "":
-        error_label3 = Label(root, text="Password is empty", fg="red",
-                             font=("permanent marker", 12))
+        error_label3 = Label(root, text="Password is empty", fg="white",
+                             bg="#3285a8", font=("permanent marker", 12))
         error_label3.place(x=60, y=475)
         root.after(1000, error_label3.destroy)
     else:
@@ -130,7 +130,7 @@ def generate():
 root = Tk()
 root.resizable(False, False)
 root.title("LOGIN SCREEN")
-root.geometry("265x550+600+100")
+root.geometry("265x520+600+100")
 root.iconbitmap("b.ico")
 root.configure(bg="#3285a8")
 
