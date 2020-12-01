@@ -81,24 +81,24 @@ def login_verify():
         else:
             error_label1 = Label(root, text="Login or Password is incorrect."
                                             "\n Try again!",
-                                 fg="green", font=("verdana", 9))
-            error_label1.place(x=30, y=445)
+                                 fg="red", font=("permanent marker", 10))
+            error_label1.place(x=30, y=475)
             root.after(1000, error_label1.destroy)
     elif username1 == "":
-        error_label2 = Label(root, text="Student number is empty", fg="green",
-                             font=("verdana", 11))
-        error_label2.place(x=35, y=455)
+        error_label2 = Label(root, text="Student number is empty", fg="red",
+                             font=("permanent marker", 12))
+        error_label2.place(x=35, y=475)
         root.after(1000, error_label2.destroy)
     elif password1 == "":
-        error_label3 = Label(root, text="Password is empty", fg="green",
-                             font=("verdana", 11))
-        error_label3.place(x=60, y=455)
+        error_label3 = Label(root, text="Password is empty", fg="red",
+                             font=("permanent marker", 12))
+        error_label3.place(x=60, y=475)
         root.after(1000, error_label3.destroy)
     else:
         error_label4 = Label(root, text="Login or Password is incorrect."
-                                        "\n Try again!",
-                             fg="green", font=("verdana", 9))
-        error_label4.place(x=30, y=455)
+                                        "\n Try again!", fg="white",
+                             bg="#3285a8", font=("permanent marker", 10))
+        error_label4.place(x=30, y=475)
         root.after(1000, error_label4.destroy)
 
 
@@ -130,41 +130,49 @@ def generate():
 root = Tk()
 root.resizable(False, False)
 root.title("LOGIN SCREEN")
-root.geometry("265x490+600+100")
+root.geometry("265x550+600+100")
 root.iconbitmap("b.ico")
-root.configure(bg="white")
+root.configure(bg="#3285a8")
 
 photo2 = PhotoImage(file="b.png")
 photo = Label(root, image=photo2, bg="#999966")
 eye_photo = PhotoImage(file=r"D:\Final-Project\p.png")
 eye_photo2 = PhotoImage(file=r"D:\Final-Project\rsz_3o.png")
 
-sign_in_lbl = Label(root, text="Sign In", font=("Helvetica", 20))
+sign_in_lbl = Label(root, text="Sign In", bg="#3285a8",
+                    font=("bungee inline", 20))
 
-password_entry_main = Entry(root, borderwidth=6)
-login_entry_main = Entry(root, borderwidth=6)
+login_entry_main = Entry(root, borderwidth=4, relief="solid", bg="#393f40",
+                         width=16, font=("cabin sketch", 15), fg="white")
+password_entry_main = Entry(root, borderwidth=4, relief="solid", bg="#393f40",
+                            width=16, font=("cabin sketch", 15), fg="white")
 
-login_btn = Button(root, text="Login", command=login_verify, padx=46)
-register_btn = Button(root, text="Register", command=register_user, padx=40)
-show_btn = Button(root, text="👁", image=eye_photo, command=toggle_password)
+login_btn = Button(root, text="Login", font=("doppio one", 15),
+                   command=login_verify, bg="#677882",
+                   activebackground="#31484f", padx=27)
+register_btn = Button(root, text="Register", font=("doppio one", 15),
+                      command=register_user, bg="#677882",
+                      activebackground="#31484f", padx=8)
+show_btn = Button(root, text="👁", image=eye_photo, bg="#586466",
+                  activebackground="#31484f", command=toggle_password)
 
 AlaToo_lbl = Label(root, text="Ala-Too International University 2020",
-                   font=("Arial", 9))
+                   font=("Dubai Medium", 10), bg="#3285a8")
 
 photo.grid()
 sign_in_lbl.grid()
-login_entry_main.grid()
+login_entry_main.place(x=16, y=320)
 login_entry_main.insert(0, "Student Number")
 login_entry_main.bind("<FocusIn>",
                       lambda args: login_entry_main.delete('0', 'end'))
-password_entry_main.grid()
+password_entry_main.place(x=16, y=360)
 password_entry_main.insert(0, "Password")
 password_entry_main.bind("<FocusIn>",
                          lambda args: password_entry_main.delete('0', 'end'))
-login_btn.grid()
-register_btn.place(x=67, y=385)
-show_btn.place(x=195, y=327)
+login_btn.place(x=15, y=400)
+register_btn.place(x=140, y=400)
+show_btn.place(x=221, y=364)
 
-AlaToo_lbl.place(x=30, y=420)
+AlaToo_lbl.place(x=30, y=450)
 
 root.mainloop()
