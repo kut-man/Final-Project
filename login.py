@@ -33,7 +33,8 @@ def register_user():
     Button(register_win, text="Sign Up", command=register_file, padx=34, pady=5, bg="#52dfff", activebackground="#a1c4cc").place(x=20, y=290)
     Button(register_win, text="Generate Password", command=generate, pady=5, bg="#52dfff", activebackground="#a1c4cc").place(x=137, y=290)
     Label(register_win, text="I accept the terms of use", bg="#a1c4cc", font=("arial", 9)).place(x=40, y=250)
-    Radiobutton(register_win, bg="#a1c4cc", activebackground="#a1c4cc").place(x=15, y=249)
+    var = StringVar()
+    Checkbutton(register_win, variable=var, bg="#a1c4cc", activebackground="#a1c4cc").place(x=15, y=249)
 
 
 def register_file():
