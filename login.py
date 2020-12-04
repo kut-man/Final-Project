@@ -50,23 +50,23 @@ def register_file():
     if username_info == "" or password_info == "":
         empty = Label(register_win, text="Empty blanc!", fg="green",
                       font=("verdana", 11))
-        empty.pack()
+        empty.place(x=80, y=330)
         register_win.after(1000, empty.destroy)
     elif len(username_info) > 13:
         len_error = Label(register_win, text="Too long username", fg="green",
                           font=("verdana", 11))
-        len_error.pack()
+        len_error.place(x=55, y=330)
         register_win.after(1000, len_error.destroy)
     elif len(password_info) > 13:
         len_error1 = Label(register_win, text="Too long password", fg="green",
                            font=("verdana", 11))
-        len_error1.pack()
+        len_error1.place(x=55, y=330)
         register_win.after(1000, len_error1.destroy)
     else:
         username_entry.delete(0, END)
         password_entry.delete(0, END)
         Label(register_win, text="Successfully Registered", fg="green",
-              font=("verdana", 11)).pack()
+              font=("verdana", 11)).place(x=43, y=330)
         register_win.after(1000, lambda: register_win.destroy())
 
 
