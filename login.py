@@ -31,43 +31,53 @@ def register_user():
     register_win.resizable(False, False)
     register_win.iconbitmap("b.ico")
     register_win.configure(bg="#a1c4cc")
-    Label(register_win, text="Sign Up", font=("Arial Rounded MT bold", 15), bg="#3285a8").place(x=10, y=10)
-    Label(register_win, text="Want to sign up fill out this form!", font=("arial cyr", 9), fg="#918d8d",
+    Label(register_win, text="Sign Up", font=("Arial Rounded MT bold", 15),
+          bg="#3285a8").place(x=10, y=10)
+    Label(register_win, text="Want to sign up fill out this form!",
+          font=("arial cyr", 9), fg="#918d8d",
           bg="#a1c4cc").place(x=10, y=40)
-    Label(register_win, text="_______________________________________________________", fg="#918d8d",
-          bg="#a1c4cc").place(x=-5, y=60)
-    Label(register_win, text="Student Number", bg="#3285a8", font=("arial", 9)).place(x=20, y=100)
-    username_entry = Entry(register_win, width=15, font=("arial", 20), relief="solid", bg="#999966")
+    Label(register_win, text="___________________________________"
+                             "____________________",
+          fg="#918d8d", bg="#a1c4cc").place(x=-5, y=60)
+    Label(register_win, text="Student Number", bg="#3285a8",
+          font=("arial", 9)).place(x=20, y=100)
+    username_entry = Entry(register_win, width=15, font=("arial", 20),
+                           relief="solid", bg="#999966")
     username_entry.place(x=20, y=123)
-    Label(register_win, text="Password", bg="#3285a8", font=("arial", 9)).place(x=20, y=180)
-    password_entry = Entry(register_win, width=15, font=("arial", 20), relief="solid", bg="#999966")
+    Label(register_win, text="Password", bg="#3285a8",
+          font=("arial", 9)).place(x=20, y=180)
+    password_entry = Entry(register_win, width=15, font=("arial", 20),
+                           relief="solid", bg="#999966")
     password_entry.place(x=20, y=203)
-    Button(register_win, text="Sign Up", command=register_file, padx=34, pady=5, bg="#52dfff",
-           activebackground="#a1c4cc").place(x=20, y=290)
-    Button(register_win, text="Generate Password", command=generate, pady=5, bg="#52dfff",
-           activebackground="#a1c4cc").place(x=137, y=290)
-    Label(register_win, text="I accept the terms of use", bg="#a1c4cc", font=("arial", 9)).place(x=40, y=250)
+    Button(register_win, text="Sign Up", command=register_file, padx=34,
+           pady=5, bg="#52dfff", activebackground="#a1c4cc").place(x=20, y=290)
+    Button(register_win, text="Generate Password", command=generate, pady=5,
+           bg="#52dfff", activebackground="#a1c4cc").place(x=137, y=290)
+    Label(register_win, text="I accept the terms of use", bg="#a1c4cc",
+          font=("arial", 9)).place(x=40, y=250)
     var = StringVar()
-    Checkbutton(register_win, variable=var, bg="#a1c4cc", activebackground="#a1c4cc").place(x=15, y=249)
+    Checkbutton(register_win, variable=var, bg="#a1c4cc",
+                activebackground="#a1c4cc").place(x=15, y=249)
 
 
 def register_file():
     username_info = username_entry.get()
     password_info = password_entry.get()
-    alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
+    alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+                "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
                 "V", "W", "X", "Y", "Z"]
     chek = 0
     for k in range(len(alphabet)):
         if alphabet[k] in username_info.upper():
-            chek = chek+1
+            chek = chek + 1
     if username_info == "" or password_info == "":
         empty = Label(register_win, text="Empty blanc!", fg="green",
                       font=("verdana", 11))
         empty.place(x=80, y=330)
         register_win.after(1000, empty.destroy)
     elif len(username_info) > 9 or len(username_info) < 9:
-        len_error = Label(register_win, text="Length of Student Number \n should be 9", fg="green",
-                          font=("verdana", 11))
+        len_error = Label(register_win, fg="green", font=("verdana", 11),
+                          text="Length of Student Number \n should be 9",)
         len_error.place(x=30, y=330)
         register_win.after(1000, len_error.destroy)
 
@@ -77,8 +87,8 @@ def register_file():
         len_error1.place(x=55, y=330)
         register_win.after(1000, len_error1.destroy)
     elif chek > 0:
-        type_error = Label(register_win, text="Use only numbers \n in username!", fg="green",
-                           font=("verdana", 11))
+        type_error = Label(register_win, fg="green", font=("verdana", 11),
+                           text="Use only numbers \n in username!")
         type_error.place(x=55, y=330)
         register_win.after(1000, type_error.destroy)
     else:
