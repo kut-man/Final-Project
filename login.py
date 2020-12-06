@@ -3,9 +3,19 @@ from random import choice
 import os
 
 
-def login_success():
-    root.deiconify()
-    root.destroy()
+class LoginWindow:
+    def login_success(self):
+        self.login_win = Toplevel()
+        self.login_win.iconbitmap("b.ico")
+        self.login_win.title("Student Information")
+        self.login_win.geometry("1465x800")
+        self.login_win.configure(bg="#a1c4cc")
+        self.photo2 = PhotoImage(file="0.png")
+        self.photo = Label(self.login_win, image=self.photo2)
+        self.photo.grid()
+
+
+p1 = LoginWindow()
 
 
 def register_user():
@@ -22,16 +32,20 @@ def register_user():
     register_win.iconbitmap("b.ico")
     register_win.configure(bg="#a1c4cc")
     Label(register_win, text="Sign Up", font=("Arial Rounded MT bold", 15), bg="#3285a8").place(x=10, y=10)
-    Label(register_win, text="Want to sign up fill out this form!", font=("arial cyr", 9), fg="#918d8d", bg="#a1c4cc").place(x=10, y=40)
-    Label(register_win, text="_______________________________________________________", fg="#918d8d", bg="#a1c4cc").place(x=-5, y=60)
+    Label(register_win, text="Want to sign up fill out this form!", font=("arial cyr", 9), fg="#918d8d",
+          bg="#a1c4cc").place(x=10, y=40)
+    Label(register_win, text="_______________________________________________________", fg="#918d8d",
+          bg="#a1c4cc").place(x=-5, y=60)
     Label(register_win, text="Username", bg="#3285a8", font=("arial", 9)).place(x=20, y=100)
     username_entry = Entry(register_win, width=15, font=("arial", 20), relief="solid", bg="#999966")
     username_entry.place(x=20, y=123)
     Label(register_win, text="Password", bg="#3285a8", font=("arial", 9)).place(x=20, y=180)
     password_entry = Entry(register_win, width=15, font=("arial", 20), relief="solid", bg="#999966")
     password_entry.place(x=20, y=203)
-    Button(register_win, text="Sign Up", command=register_file, padx=34, pady=5, bg="#52dfff", activebackground="#a1c4cc").place(x=20, y=290)
-    Button(register_win, text="Generate Password", command=generate, pady=5, bg="#52dfff", activebackground="#a1c4cc").place(x=137, y=290)
+    Button(register_win, text="Sign Up", command=register_file, padx=34, pady=5, bg="#52dfff",
+           activebackground="#a1c4cc").place(x=20, y=290)
+    Button(register_win, text="Generate Password", command=generate, pady=5, bg="#52dfff",
+           activebackground="#a1c4cc").place(x=137, y=290)
     Label(register_win, text="I accept the terms of use", bg="#a1c4cc", font=("arial", 9)).place(x=40, y=250)
     var = StringVar()
     Checkbutton(register_win, variable=var, bg="#a1c4cc", activebackground="#a1c4cc").place(x=15, y=249)
@@ -81,7 +95,7 @@ def login_verify():
         file1 = open(username1, "r")
         verify = file1.read().splitlines()
         if password1 in verify:
-            login_success()
+            LoginWindow.login_success(p1)
 
         else:
             error_label1 = Label(root, text="Login or Password is incorrect."
