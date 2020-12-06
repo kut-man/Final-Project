@@ -26,7 +26,7 @@ def register_user():
     global register_win
 
     register_win = Toplevel(root)
-    register_win.title("Register")
+    register_win.title("Sign Up")
     register_win.geometry("265x400+866+100")
     register_win.resizable(False, False)
     register_win.iconbitmap("b.ico")
@@ -36,7 +36,7 @@ def register_user():
           bg="#a1c4cc").place(x=10, y=40)
     Label(register_win, text="_______________________________________________________", fg="#918d8d",
           bg="#a1c4cc").place(x=-5, y=60)
-    Label(register_win, text="Username", bg="#3285a8", font=("arial", 9)).place(x=20, y=100)
+    Label(register_win, text="Student Number", bg="#3285a8", font=("arial", 9)).place(x=20, y=100)
     username_entry = Entry(register_win, width=15, font=("arial", 20), relief="solid", bg="#999966")
     username_entry.place(x=20, y=123)
     Label(register_win, text="Password", bg="#3285a8", font=("arial", 9)).place(x=20, y=180)
@@ -54,29 +54,41 @@ def register_user():
 def register_file():
     username_info = username_entry.get()
     password_info = password_entry.get()
-    try:
-        file = open(username_info, "w")
-        file.write(username_info + "\n")
-        file.write(password_info)
-        file.close()
-    except FileNotFoundError:
-        pass
+    alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
+                "V", "W", "X", "Y", "Z"]
+    chek = 0
+    for k in range(len(alphabet)):
+        if alphabet[k] in username_info.upper():
+            chek = chek+1
     if username_info == "" or password_info == "":
         empty = Label(register_win, text="Empty blanc!", fg="green",
                       font=("verdana", 11))
         empty.place(x=80, y=330)
         register_win.after(1000, empty.destroy)
-    elif len(username_info) > 13:
-        len_error = Label(register_win, text="Too long username", fg="green",
+    elif len(username_info) > 9 or len(username_info) < 9:
+        len_error = Label(register_win, text="Length of Student Number \n should be 9", fg="green",
                           font=("verdana", 11))
-        len_error.place(x=55, y=330)
+        len_error.place(x=30, y=330)
         register_win.after(1000, len_error.destroy)
-    elif len(password_info) > 13:
+
+    elif len(password_info) > 15:
         len_error1 = Label(register_win, text="Too long password", fg="green",
                            font=("verdana", 11))
         len_error1.place(x=55, y=330)
         register_win.after(1000, len_error1.destroy)
+    elif chek > 0:
+        type_error = Label(register_win, text="Use only numbers \n in username!", fg="green",
+                           font=("verdana", 11))
+        type_error.place(x=55, y=330)
+        register_win.after(1000, type_error.destroy)
     else:
+        try:
+            file = open(username_info, "w")
+            file.write(username_info + "\n")
+            file.write(password_info)
+            file.close()
+        except FileNotFoundError:
+            pass
         username_entry.delete(0, END)
         password_entry.delete(0, END)
         Label(register_win, text="Successfully Registered", fg="green",
@@ -114,11 +126,11 @@ def login_verify():
         error_label3.place(x=60, y=475)
         root.after(1000, error_label3.destroy)
     else:
-        error_label4 = Label(root, text="Login or Password is incorrect."
+        error_label5 = Label(root, text="Login or Password is incorrect."
                                         "\n Try again!", fg="white",
                              bg="#3285a8", font=("permanent marker", 10))
-        error_label4.place(x=30, y=475)
-        root.after(1000, error_label4.destroy)
+        error_label5.place(x=30, y=475)
+        root.after(1000, error_label5.destroy)
 
 
 def toggle_password():
@@ -148,7 +160,7 @@ def generate():
 
 root = Tk()
 root.resizable(False, False)
-root.title("LOGIN SCREEN")
+root.title("Sign In")
 root.geometry("265x520+600+100")
 root.iconbitmap("b.ico")
 root.configure(bg="#3285a8")
