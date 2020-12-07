@@ -156,7 +156,7 @@ def login_verify():
         root.after(1000, error_label5.destroy)
 
 
-def toggle_password():
+def hide_password():
     if password_entry_main.cget('show') == '':
         password_entry_main.config(show='*')
         show_btn.config(image=eye_photo2)
@@ -165,7 +165,12 @@ def toggle_password():
         show_btn.config(image=eye_photo)
 
 
-def low():
+def generate():
+    password1 = password_creator()
+    password_entry.insert(0, password1)
+
+
+def password_creator():
     password_entry.delete(0, END)
 
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -174,11 +179,6 @@ def low():
     for i in range(0, 10):
         paswrd = paswrd + choice(upper)
     return paswrd
-
-
-def generate():
-    password1 = low()
-    password_entry.insert(0, password1)
 
 
 root = Tk()
@@ -208,7 +208,7 @@ register_btn = Button(root, text="Register", font=("doppio one", 15),
                       command=register_user, bg="#677882",
                       activebackground="#31484f", padx=8)
 show_btn = Button(root, text="👁", image=eye_photo, bg="#586466",
-                  activebackground="#31484f", command=toggle_password)
+                  activebackground="#31484f", command=hide_password)
 
 AlaToo_lbl = Label(root, text="Ala-Too International University 2020",
                    font=("Dubai Medium", 10), bg="#3285a8")
