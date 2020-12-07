@@ -24,6 +24,7 @@ def register_user():
     global username_entry
     global password_entry
     global register_win
+    global var
 
     register_win = Toplevel(root)
     register_win.title("Sign Up")
@@ -55,7 +56,7 @@ def register_user():
            bg="#52dfff", activebackground="#a1c4cc").place(x=137, y=290)
     Label(register_win, text="I accept the terms of use", bg="#a1c4cc",
           font=("arial", 9)).place(x=40, y=250)
-    var = StringVar()
+    var = IntVar()
     Checkbutton(register_win, variable=var, bg="#a1c4cc",
                 activebackground="#a1c4cc").place(x=15, y=249)
 
@@ -77,7 +78,7 @@ def register_file():
         register_win.after(1000, empty.destroy)
     elif len(username_info) > 9 or len(username_info) < 9:
         len_error = Label(register_win, fg="green", font=("verdana", 11),
-                          text="Length of Student Number \n should be 9",)
+                          text="Length of Student Number \n should be 9")
         len_error.place(x=30, y=330)
         register_win.after(1000, len_error.destroy)
 
@@ -91,6 +92,11 @@ def register_file():
                            text="Use only numbers \n in username!")
         type_error.place(x=55, y=330)
         register_win.after(1000, type_error.destroy)
+    elif var.get() == 0:
+        agreement_error = Label(register_win, fg="green", font=("verdana", 11),
+                                text="Put mark on agreement \n policy to sign up!")
+        agreement_error.place(x=38, y=330)
+        register_win.after(1000, agreement_error.destroy)
     else:
         try:
             file = open(username_info, "w")
