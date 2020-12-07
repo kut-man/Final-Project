@@ -62,6 +62,7 @@ def register_user():
 
 
 def register_file():
+    list_of_users = os.listdir()
     username_info = username_entry.get()
     password_info = password_entry.get()
     alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
@@ -94,9 +95,15 @@ def register_file():
         register_win.after(1000, type_error.destroy)
     elif var.get() == 0:
         agreement_error = Label(register_win, fg="green", font=("verdana", 11),
-                                text="Put mark on agreement \n policy to sign up!")
+                                text="Put mark on agreement"
+                                     "\npolicy to sign up!")
         agreement_error.place(x=38, y=330)
         register_win.after(1000, agreement_error.destroy)
+    elif username_info in list_of_users:
+        clone_error = Label(register_win, fg="green", font=("verdana", 11),
+                            text="This Student Number\nis already exist!")
+        clone_error.place(x=50, y=330)
+        register_win.after(1000, clone_error.destroy)
     else:
         try:
             file = open(username_info, "w")
