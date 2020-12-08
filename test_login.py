@@ -9,3 +9,5 @@ class Test_password_creator(unittest.TestCase):
         self.assertIsNotNone(login.password_creator())
         for k in login.password_creator():
             self.assertIn(k, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+
+PRINTQWEREGDTR
