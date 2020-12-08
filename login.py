@@ -22,7 +22,7 @@ def register_user():
     global username
     global password
     global username_entry
-    global password_entry
+    global pass_entr
     global register_win
     global var
 
@@ -47,9 +47,9 @@ def register_user():
     username_entry.place(x=20, y=123)
     Label(register_win, text="Password", bg="#3285a8",
           font=("arial", 9)).place(x=20, y=180)
-    password_entry = Entry(register_win, width=15, font=("arial", 20),
+    pass_entr = Entry(register_win, width=15, font=("arial", 20),
                            relief="solid", bg="#999966")
-    password_entry.place(x=20, y=203)
+    pass_entr.place(x=20, y=203)
     Button(register_win, text="Sign Up", command=register_file, padx=34,
            pady=5, bg="#52dfff", activebackground="#a1c4cc").place(x=20, y=290)
     Button(register_win, text="Generate Password", command=generate, pady=5,
@@ -64,7 +64,7 @@ def register_user():
 def register_file():
     list_of_users = os.listdir()
     username_info = username_entry.get()
-    password_info = password_entry.get()
+    password_info = pass_entr.get()
     alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
                 "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
                 "V", "W", "X", "Y", "Z"]
@@ -113,7 +113,7 @@ def register_file():
         except FileNotFoundError:
             pass
         username_entry.delete(0, END)
-        password_entry.delete(0, END)
+        pass_entr.delete(0, END)
         Label(register_win, text="Successfully Registered", fg="green",
               font=("verdana", 11)).place(x=43, y=330)
         register_win.after(1000, lambda: register_win.destroy())
@@ -121,9 +121,9 @@ def register_file():
 
 def login_verify():
     global login_entry_main
-    global password_entry_main
+    global pass_entr_main
     username1 = login_entry_main.get()
-    password1 = password_entry_main.get()
+    password1 = pass_entr_main.get()
     list_of_files = os.listdir()
 
     if username1 in list_of_files:
@@ -157,21 +157,21 @@ def login_verify():
 
 
 def hide_password():
-    if password_entry_main.cget('show') == '':
-        password_entry_main.config(show='*')
+    if pass_entr_main.cget('show') == '':
+        pass_entr_main.config(show='*')
         show_btn.config(image=eye_photo2)
     else:
-        password_entry_main.config(show='')
+        pass_entr_main.config(show='')
         show_btn.config(image=eye_photo)
 
 
 def generate():
+    pass_entr.delete(0, END)
     password1 = password_creator()
-    password_entry.insert(0, password1)
+    pass_entr.insert(0, password1)
 
 
 def password_creator():
-    password_entry.delete(0, END)
 
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     paswrd = ""
@@ -198,7 +198,7 @@ sign_in_lbl = Label(root, text="Sign In", bg="#3285a8",
 
 login_entry_main = Entry(root, borderwidth=4, relief="solid", bg="#393f40",
                          width=16, font=("cabin sketch", 15), fg="white")
-password_entry_main = Entry(root, borderwidth=4, relief="solid", bg="#393f40",
+pass_entr_main = Entry(root, borderwidth=4, relief="solid", bg="#393f40",
                             width=16, font=("cabin sketch", 15), fg="white")
 
 login_btn = Button(root, text="Login", font=("doppio one", 15),
@@ -219,10 +219,10 @@ login_entry_main.place(x=16, y=320)
 login_entry_main.insert(0, "Student Number")
 login_entry_main.bind("<FocusIn>",
                       lambda args: login_entry_main.delete('0', 'end'))
-password_entry_main.place(x=16, y=360)
-password_entry_main.insert(0, "Password")
-password_entry_main.bind("<FocusIn>",
-                         lambda args: password_entry_main.delete('0', 'end'))
+pass_entr_main.place(x=16, y=360)
+pass_entr_main.insert(0, "Password")
+pass_entr_main.bind("<FocusIn>",
+                         lambda args: pass_entr_main.delete('0', 'end'))
 login_btn.place(x=15, y=400)
 register_btn.place(x=140, y=400)
 show_btn.place(x=221, y=364)

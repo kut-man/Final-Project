@@ -1,8 +1,8 @@
-from unittest import TestCase
+import unittest
 import login
 
 
-class Test_password_creator(TestCase):
+class Test_password_creator(unittest.TestCase):
     def test_password_creator(self):
         self.assertEqual(len(login.password_creator()), 10)
         self.assertEqual(type(login.password_creator()), str)
