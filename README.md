@@ -34,3 +34,5 @@ root.configure(bg="#3285a8")
 
 root.mainloop()
 ```
+
+The result will be like this:
