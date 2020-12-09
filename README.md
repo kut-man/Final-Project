@@ -19,17 +19,6 @@ from tkinter import *
 from random import choice
 import os
 
-root = Tk()
-root.resizable(False, False)
-root.title("Sign In")
-root.geometry("265x520+600+100")
-root.iconbitmap("b.ico")
-root.configure(bg="#3285a8")
-
-
-root.mainloop()
-
-
 ```
 from tkinter import *
 from random import choice
