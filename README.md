@@ -36,3 +36,4 @@ root.mainloop()
 ```
 
 The result will be like this:
+![Screenshot 2020-12-09 220820](https://user-images.githubusercontent.com/73386100/101654825-22853900-3a6b-11eb-80b5-41da979ea7a3.png)
