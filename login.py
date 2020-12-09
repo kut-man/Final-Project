@@ -48,17 +48,24 @@ def register_user():
     Label(register_win, text="Password", bg="#3285a8",
           font=("arial", 9)).place(x=20, y=180)
     pass_entr = Entry(register_win, width=15, font=("arial", 20),
-                           relief="solid", bg="#999966")
+                      relief="solid", bg="#999966")
     pass_entr.place(x=20, y=203)
-    Button(register_win, text="Sign Up", command=register_file, padx=34,
-           pady=5, bg="#52dfff", activebackground="#a1c4cc").place(x=20, y=290)
+    but = Button(register_win, text="Sign Up", command=register_file, padx=34,
+           pady=5, bg="#52dfff", activebackground="#a1c4cc", state=DISABLED)
+    but.place(x=20, y=290)
     Button(register_win, text="Generate Password", command=generate, pady=5,
            bg="#52dfff", activebackground="#a1c4cc").place(x=137, y=290)
     Label(register_win, text="I accept the terms of use", bg="#a1c4cc",
           font=("arial", 9)).place(x=40, y=250)
+    def enable():
+        if var.get():
+            but['state'] = 'normal'
+        else:
+            but['state'] = 'disabled'  # disable it
     var = IntVar()
-    Checkbutton(register_win, variable=var, bg="#a1c4cc",
-                activebackground="#a1c4cc").place(x=15, y=249)
+    cb = Checkbutton(register_win, variable=var, bg="#a1c4cc",
+                activebackground="#a1c4cc", command=enable)
+    cb.place(x=15, y=249)
 
 
 def register_file():
@@ -172,7 +179,6 @@ def generate():
 
 
 def password_creator():
-
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     paswrd = ""
 
@@ -199,7 +205,7 @@ sign_in_lbl = Label(root, text="Sign In", bg="#3285a8",
 login_entry_main = Entry(root, borderwidth=4, relief="solid", bg="#393f40",
                          width=16, font=("cabin sketch", 15), fg="white")
 pass_entr_main = Entry(root, borderwidth=4, relief="solid", bg="#393f40",
-                            width=16, font=("cabin sketch", 15), fg="white")
+                       width=16, font=("cabin sketch", 15), fg="white")
 
 login_btn = Button(root, text="Login", font=("doppio one", 15),
                    command=login_verify, bg="#677882",
@@ -222,7 +228,7 @@ login_entry_main.bind("<FocusIn>",
 pass_entr_main.place(x=16, y=360)
 pass_entr_main.insert(0, "Password")
 pass_entr_main.bind("<FocusIn>",
-                         lambda args: pass_entr_main.delete('0', 'end'))
+                    lambda args: pass_entr_main.delete('0', 'end'))
 login_btn.place(x=15, y=400)
 register_btn.place(x=140, y=400)
 show_btn.place(x=221, y=364)
