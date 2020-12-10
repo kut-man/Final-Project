@@ -583,4 +583,4 @@ root.mainloop()
 ```
 
 So this was Python GUI Login tutorial. I hope you have understood this very well. If you found it helpful then please
-share with others. And if you are getting any difficulty while doing this then comment your queries. Thanks
+share with others. Thanks for Your Time.
