@@ -70,7 +70,7 @@ The result will be like this:
 
 ![qwertyuio](https://user-images.githubusercontent.com/73386100/101727987-c27caa00-3adf-11eb-8a0a-d7dd804dae5b.png)
 
-### Now we will create register window:
+## Now we will create register window:
 
 That means if a user press register button on the main screen, new window will appear where users have to enter a
 username and password. This way they can register themselves. So let’s see how to do that.
@@ -113,7 +113,7 @@ def register_user():
 
 ```
 
-### Create Register Button in root(main) window and bind it to the register function with command:
+#### Create Register Button in root(main) window and bind it to the register function with command:
 
 ```
 register_btn = Button(root, text="Register", font=("doppio one", 15),
