@@ -338,6 +338,26 @@ p1 = LoginWindow()
 
 I just put one image in success window, you can do it what you want.
 
+
+
+
+\
+We should create hide button which will hide password when user writing. For this we can use show method.
+```
+def hide_password():
+    if pass_entr_main.cget('show') == '':
+        pass_entr_main.config(show='*')
+        show_btn.config(image=eye_photo2)
+    else:
+        pass_entr_main.config(show='')
+        show_btn.config(image=eye_photo)
+```
+We created function, now create a button. Do not forget to bind with our function!
+
+```
+show_btn = Button(root, text="👁", image=eye_photo, bg="#586466",
+                  activebackground="#31484f", command=hide_password)
+```
 ## Complete Code For Python GUI Login
 
 ```
