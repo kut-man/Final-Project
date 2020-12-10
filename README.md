@@ -72,7 +72,7 @@ The result will be like this:
 
 ### Now we will create register window:
 
-That means if a user press register button on main screen then a new window will appear where users have to enter a
+That means if a user press register button on the main screen, new window will appear where users have to enter a
 username and password. This way they can register themselves. So let’s see how to do that.
 
 ```
@@ -155,13 +155,13 @@ def password_creator():
 
 ```
 
-If you want you can make passwords more strong. Just add numbers and sybols in upper variable.
+If you want, you can make passwords more strong. Just add numbers and symbols in upper variable.
 
-### We created Register button in register window but it dose not work. To make it we will create register_file function.
+### We created Register button in register window, but it did not work. To make it we will create register_file function.
 
 This function will create files with names which we input in username entry. After that we can get all list of files and
 chek is this file in our computer. Also, we should add some limitations for registration. For instance: If user will
-enter strings in username entry we will return massage that in the username should be only numbers. You can create
+enter strings in username entry we will return massage that the username should be only numbers. You can create
 limitations by your see. Be sure that you put limitations before the creating file, otherwise it will register even if
 it is incorrect
 
@@ -250,7 +250,7 @@ Result:
 
 ![ppppppppppppppppppppp](https://user-images.githubusercontent.com/73386100/101728321-70885400-3ae0-11eb-80c4-55ccf179d710.png)
 
-When user see this window there will be some question: where to write a username and where password? Therefore we will
+When user see this window there will be some question: where to write a username and where password? Therefore, we will
 create placeholders. This placeholder will disappear when user will click on it.
 
 ```
@@ -265,7 +265,7 @@ pass_entr_main.bind("<FocusIn>",
 
 ## Login Verification Process
 
-In this section we will verify the username and password for login. So let’s start
+In this section we will verify the username and password for the login. So let’s start
 
 #### Defining Verification function
 
@@ -316,7 +316,7 @@ def login_verify():
 
 ### Designing Login Success Window
 
-Now we will define a function that will show a window for successful login. If user has entered the valid entries then
+Now we will define a function that will show a window for a successful login. If user has entered the valid entries then
 this window will appear. So let’s see how to do it.
 
 ```
@@ -582,5 +582,5 @@ root.mainloop()
 
 ```
 
-So this was Python GUI Login tutorial. I hope you have understand this very well. If you found it helpful then please
+So this was Python GUI Login tutorial. I hope you have understood this very well. If you found it helpful then please
 share with others. And if you are getting any difficulty while doing this then comment your queries. Thanks
