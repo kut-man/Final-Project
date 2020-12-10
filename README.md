@@ -358,6 +358,11 @@ We created function, now create a button. Do not forget to bind with our functio
 show_btn = Button(root, text="👁", image=eye_photo, bg="#586466",
                   activebackground="#31484f", command=hide_password)
 ```
+
+Final Result:
+
+![final look](https://user-images.githubusercontent.com/73386100/101783927-0e9e0d80-3b25-11eb-84b6-2263cbe2eef3.png)
+
 ## Complete Code For Python GUI Login
 
 ```
