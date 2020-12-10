@@ -113,7 +113,7 @@ def register_user():
 
 ```
 
-######Create Register Button in root(main) window and bind it to the register function with command:
+###### Create Register Button in root(main) window and bind it to the register function with command:
 
 ```
 register_btn = Button(root, text="Register", font=("doppio one", 15),
