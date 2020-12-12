@@ -58,7 +58,7 @@ def register_user():
     Label(register_win, text="I accept the terms of use", bg="#a1c4cc",
           font=("arial", 9)).place(x=40, y=250)
     def enable():
-        if var.get():
+        if var.get() == 1:
             but['state'] = 'normal'
         else:
             but['state'] = 'disabled'  # disable it
@@ -123,7 +123,7 @@ def register_file():
         pass_entr.delete(0, END)
         Label(register_win, text="Successfully Registered", fg="green",
               font=("verdana", 11)).place(x=43, y=330)
-        register_win.after(1000, lambda: register_win.destroy())
+        register_win.after(1000, register_win.destroy)
 
 
 def login_verify():
