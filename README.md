@@ -1,5 +1,9 @@
 # Python Tutorial (Login System)
 
+### Video in YouTube: https://www.youtube.com/watch?v=3X6R3eA62vA
+
+### Presentation In Drive: https://drive.google.com/file/d/16zNCtPa6Tqjub1ptlz0yKWxDEdNQymxa/view
+
 In this tutorial, we will learn how to create login system by writing some Python GUI examples using the Tkinter
 package.
 
