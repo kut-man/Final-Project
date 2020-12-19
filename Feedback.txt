@@ -1,0 +1,38 @@
+Very good interesting project, If, it was done by student in first semester. I used this program and it works without
+error. Design is cool, colorful. Extremely user friendly and very well developed. Hope the best. Keep on like this.
+                Emirlan Sadyrakiev
+***
+I am not programmer but I think it is good job. But I have some idea, you can add more functions if window where has
+big photo of Ala Too university. For example, information about student or his grades. By the way good project.
+It is not limit.
+                Nurbek Anaraly uulu
+***
+The design is so simple that the user won’t find any difficulties while working on it. In order to run the project,
+you must have installed Python and on your PC. This is a simple application system application for beginners.
+Excellent work.
+                Erkebay Muzabekov
+***
+I’m impressed, it well deserves recognition. Given the nature of the assignment, that’s great. However, some of your
+specific arguments need developed - the message that appears when you enter an incorrect password or name disappears
+very quickly. You could make this message last longer. Overall, it’s clear that you put a lot of effort and time.
+                Alima Eshenkulova
+***
+The project is good but useless. You could do the same only online inside the site. But for language learning you can.
+Try to create something really necessary for the next time. I believe in you and hope that you get good grades
+for this project
+                Erlan Shaktybekov
+***
+The mind of the person who created this program is clear and broad-minded, because at least the design is very
+beautifully reflected, and at the same time the program works and the system is good. Kutman Eshenkulov Create other
+programs and achieve great success in the future. The program you are currently preparing is even better! Now I hope
+that you will achieve many more successes in your undergraduate.
+	            Tenirberdi Timur uulu
+***
+Entrance system or login system "I appreciate that you paid attention to every detail while making it because it is
+obvious that the programming is very well done, I wish you more further success in mastering programming more
+carefully in the future.
+                Kushbek Jakypov
+***
+I appreciate your work because you made a program with a beautiful interface and it's also working properly. However,
+I believe that you can achieve even more; therefore, try more, and hope that you become successful!
+                Erhan Toktorov
