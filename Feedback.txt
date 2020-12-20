@@ -23,17 +23,22 @@ Try to create something really necessary for the next time. I believe in you and
 for this project
                 Erlan Shaktybekov
 ## 6 ##
+Honestly, I do not interest two programming. Therefore, I cannot say much About this program. But I noticed that this
+program works properly, I entered invalid symbols and characters and the program continued working properly.
+I Think it is a good indication of the program. Also, he wrote tutorial about his project, it means he did a good job.
+		Nurgul Samatova
+## 7 ##
 The mind of the person who created this program is clear and broad-minded, because at least the design is very
 beautifully reflected, and at the same time the program works and the system is good. Kutman Eshenkulov Create other
 programs and achieve great success in the future. The program you are currently preparing is even better! Now I hope
 that you will achieve many more successes in your undergraduate.
 	        Tenirberdi Timur uulu
-## 7 ##
+## 8 ##
 I appreciate that you paid attention to every detail while making it because it is
 obvious that the programming is very well done, I wish you more further success in mastering programming more
 carefully in the future.
                 Kushbek Jakypov
-## 8 ##
+## 9 ##
 I appreciate your work because you made a program with a beautiful interface and it's also working properly. However,
 I believe that you can achieve even more; therefore, try more, and hope that you become successful!
                 Erhan Toktorov
