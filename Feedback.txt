@@ -28,17 +28,24 @@ program works properly, I entered invalid symbols and characters and the program
 I Think it is a good indication of the program. Also, he wrote tutorial about his project, it means he did a good job.
 		Nurgul Samatova
 ## 7 ##
+I am one of those people who looked at your login program. Considering you're only one semester in your first year,
+I think this is a good achievement for a beginner programmer. The program works like any ordinary one, without errors
+and makes our life easier for us. Great job! The feedback should be provided on realistic grounds that keeps the window
+open for improvement. Of course there is always somewhere to grow. I believe you can create a useful program.
+I wish you good luck.
+		Nagima Eshenkulova
+## 8 ##
 The mind of the person who created this program is clear and broad-minded, because at least the design is very
 beautifully reflected, and at the same time the program works and the system is good. Kutman Eshenkulov Create other
 programs and achieve great success in the future. The program you are currently preparing is even better! Now I hope
 that you will achieve many more successes in your undergraduate.
 	        Tenirberdi Timur uulu
-## 8 ##
+## 9 ##
 I appreciate that you paid attention to every detail while making it because it is
 obvious that the programming is very well done, I wish you more further success in mastering programming more
 carefully in the future.
                 Kushbek Jakypov
-## 9 ##
+## 10 ##
 I appreciate your work because you made a program with a beautiful interface and it's also working properly. However,
 I believe that you can achieve even more; therefore, try more, and hope that you become successful!
                 Erhan Toktorov
