@@ -69,7 +69,7 @@ def register_user():
 
 
 def register_file():
-    list_of_users = os.listdir()
+    list_of_users = os.listdir("Saved_Passwords")
     username_info = username_entry.get()
     password_info = pass_entr.get()
     alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
@@ -113,6 +113,7 @@ def register_file():
         register_win.after(1000, clone_error.destroy)
     else:
         try:
+            os.chdir("Saved_Passwords")
             file = open(username_info, "w")
             file.write(username_info + "\n")
             file.write(password_info)
