@@ -6,11 +6,11 @@ import os
 class LoginWindow:
     def login_success(self):
         self.login_win = Toplevel()
-        self.login_win.iconbitmap("b.ico")
+        self.login_win.iconbitmap("Recourses\\logo_ico.ico")
         self.login_win.title("Student Information")
         self.login_win.geometry("1465x800")
         self.login_win.configure(bg="#a1c4cc")
-        self.photo2 = PhotoImage(file="0.png")
+        self.photo2 = PhotoImage(file="Recourses\\campus.png")
         self.photo = Label(self.login_win, image=self.photo2)
         self.photo.grid()
 
@@ -30,7 +30,7 @@ def register_user():
     register_win.title("Sign Up")
     register_win.geometry("265x400+866+100")
     register_win.resizable(False, False)
-    register_win.iconbitmap("b.ico")
+    register_win.iconbitmap("Recourses/logo_ico.ico")
     register_win.configure(bg="#a1c4cc")
     Label(register_win, text="Sign Up", font=("Arial Rounded MT bold", 15),
           bg="#3285a8").place(x=10, y=10)
@@ -191,13 +191,13 @@ root = Tk()
 root.resizable(False, False)
 root.title("Sign In")
 root.geometry("265x520+600+100")
-root.iconbitmap("b.ico")
+root.iconbitmap("Recourses\\logo_ico.ico")
 root.configure(bg="#3285a8")
 
-photo2 = PhotoImage(file="b.png")
+photo2 = PhotoImage(file="Recourses\\logo_png.png")
 photo = Label(root, image=photo2, bg="#999966")
-eye_photo = PhotoImage(file=r"D:\Final-Project\p.png")
-eye_photo2 = PhotoImage(file=r"D:\Final-Project\rsz_3o.png")
+eye_photo = PhotoImage(file=r"D:\Final-Project\Recourses\open_eye.png")
+eye_photo2 = PhotoImage(file=r"D:\Final-Project\Recourses\close_eye.png")
 
 sign_in_lbl = Label(root, text="Sign In", bg="#3285a8",
                     font=("bungee inline", 20))
